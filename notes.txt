@@ -1,0 +1,55 @@
+# Missing Data
+
+## Missingness Assumptions
+MCAR - p(missing) is unrelated to all variable observed & unobserved
+	p(missing|complete data) = p(missing)
+
+MAR - p(missing) is related to observed variables only
+	p(missing|complete data) = p(missing|observed data)
+
+MNAR - p(missing) is related to the unobserved/missing variables
+	p(missing|complete data) != p(missing|observed data)
+
+
+X: complete data
+Y: incomplete data
+R: missing (0), observed (1)
+
+Can't test whether a dataset is MAR vs MNAR. MAR <-> MNAR is on a continuum
+
+Most techniques follow an MAR assumption
+
+Techniques
+- Listwise deletion: delete all observations where there's any missing data
+- Pairwise deletion: NEED TO LOOK UP. Mentions correlations
+- Adhoc single imputatation
+	- Mean imputations: biased under MCAR
+	- Hot deck imputation. Use a similar donor
+	- Regression imputation: use regression equation derived from observed cases
+- Multiple imputation: :-)
+	- Step 1: Impute repeatedly (add stochastic component to regression line + error)
+	- Step 2: Take m imputed datasets from step 1 & run regression on each of the datasets
+	- Step 3: Average parameter estimate from the m regressions form above & compute standard error
+- Maximum likelihood: :-)
+	- Full Informatoin Maximum Likelhood (FIML)
+	- EM Algorithm
+- Sensitivity analysis (bleh) 
+
+
+Source: 
+ Missing Data Problems and Prospects. . (2010).[Video/DVD] Center for the Advancement of Research Methods and Analysis (CARMA). Retrieved from https://video.alexanderstreet.com/watch/missing-data-problems-and-prospects
+
+Data Dictionary notes
+
+For derived attributes, we can impute but can't check if they're legal given that they're derived
+Group categories together
+Throw out columns that are highly sparse
+
+Lower you go, the less products you see? (for M&B)
+
+Midterm is solely on strategy
+Link to midterm submission will be Feb 17th
+Midterm is due Feb 23rd at 2am
+Focus on business value
+Show cleaning process
+15 - 25 slides
